@@ -7,14 +7,19 @@
   <title>To Do List</title>
 </head>
 <body>
-  <h1>To-Do List</h1>
-
+  <h1 class="header">To-Do List</h1>
+  
+  <div class="task__container">
     <input type="text" id="task__name-input" value="">
-    <button id="task__add-task-button">Добавить задачу</button>
-
-  <ul id="tasks__list">
-
-  </ul>
+    <button id="task__add-task-button" class="task__add-task-button">Добавить задачу</button>
+    <div class="task__btn-container">
+      <button id="showAll" class="task__filtred-btn">Все задачи</button>
+      <button id="showCompleted" class="task__filtred-btn">Выполненные задачи</button>
+      <button id="showIncomplete" class="task__filtred-btn">Невыполненные задачи</button>
+    </div>
+    <ul id="tasks__list" class="tasks__list">
+    </ul>
+  </div>
   <script type="module" src="./script.js"></script>
 </body>
 </html>

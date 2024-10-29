@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.header {
+  text-align: center;
+  color: #48402d;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.task__container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.tasks__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tasks__list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: rgba(234, 225, 212, 0.5);
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.tasks__list li span {
+  flex-grow: 1;
+  font-size: 16px;
+  margin-left: 10px;
+  color: #48402d;
+  transition: color 0.3s ease;
+}
+
+.tasks__list li.completed span {
+  color: #8e8e84;
+}
+
+.tasks__list li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #e3b200;
+}
+
+.delete-btn {
+  background-color: #111111;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #e3b200;
+}
+
+.task__btn-container {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task__filtred-btn {
+  background-color: #111111;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task__filtred-btn:hover {
+  background-color: #e3b200;
+}
+
+.task__add-task-button {
+  background-color: #e3b200;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task__add-task-button:hover {
+  background-color: #111111;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.tasks__list li input[type="text"] {
+  margin: 0 5px;
+  padding: 0;
+}
+
+input[type="text"], button, input[type="checkbox"] {
+  transition: all 0.3s ease;
+}

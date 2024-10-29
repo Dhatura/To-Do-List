@@ -1,8 +1,6 @@
 import { addTask } from "./modules/addTask.js";
-import { completeTask } from "./modules/completeTask.js";
-import { removeTask } from "./modules/removeTask.js";
-import { displayTasks } from "./modules/displayTasks.js";
 import { renderTasks } from "./modules/renderTasks.js";
+import { filterTasks } from "./modules/filterTasks.js";
 
 const toDoList = [];
 
@@ -17,22 +15,29 @@ function handleAddTask () {
     return
   }
   addTask(taskName, toDoList);
-  console.log(toDoList);
   renderTasks(toDoList);
 }
 
 addTaskButton.addEventListener("click", handleAddTask);
 
+taskNameInput.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    handleAddTask();
+  }
+});
 
 
+document.getElementById("showAll").addEventListener("click", () => {
+  const allTasks = filterTasks(toDoList, "all");
+  renderTasks(allTasks);
+});
 
-// addTask("Выучить JavaScript", toDoList);
-// addTask("Купить продукты", toDoList);
-// addTask("Сделать домашнее задание", toDoList);
-// addTask("Выучить HTML", toDoList);
-// addTask("           ", toDoList);
-// displayTasks(toDoList); // Cписок задач
-// completeTask("Купить продукты", toDoList);
-// removeTask("Сделать домашнее задание", toDoList);
-// removeTask("Выгулять собаку", toDoList);
-// displayTasks(toDoList); // Обновленный список задач
+document.getElementById("showCompleted").addEventListener("click", () => {
+  const completedTasks = filterTasks(toDoList, "completed");
+  renderTasks(completedTasks);
+});
+
+document.getElementById("showIncomplete").addEventListener("click", () => {
+  const incompleteTasks = filterTasks(toDoList, "incomplete");
+  renderTasks(incompleteTasks);
+});
